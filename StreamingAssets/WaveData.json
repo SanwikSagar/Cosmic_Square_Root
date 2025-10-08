@@ -69,11 +69,11 @@
                     "correct": [ "4" ]
                 },
                 {
-                    "display": "√-1",
+                    "display": "√81",
                     "spawnStyle": "normal",
                     "destroyStyle": "chainBlast",
-                    "elements": [ "1", "-i", "2i", "√2i" ],
-                    "correct": [ "i" ]
+                    "elements": [ "8", "7", "10", "6" ],
+                    "correct": [ "9" ]
                 }
             ]
         },
@@ -83,11 +83,11 @@
             "randomWaves": false,
             "waves": [
                 {
-                    "display": "√81",
+                    "display": "√100",
                     "spawnStyle": "normal",
                     "destroyStyle": "chainBlast",
-                    "elements": [ "8", "10", "5", "6" ],
-                    "correct": [ "9" ]
+                    "elements": [ "8", "9", "7", "11" ],
+                    "correct": [ "10" ]
                 },
                 {
                     "display": "√121",
@@ -104,11 +104,11 @@
                     "correct": [ "12" ]
                 },
                 {
-                    "display": "√100",
+                    "display": "√169",
                     "spawnStyle": "normal",
                     "destroyStyle": "chainBlast",
-                    "elements": [ "8", "9", "7", "11" ],
-                    "correct": [ "10" ]
+                    "elements": [ "11", "12", "10", "14" ],
+                    "correct": [ "13" ]
                 },
                 {
                     "display": "√196",
@@ -125,13 +125,6 @@
                     "correct": [ "15" ]
                 },
                 {
-                    "display": "√169",
-                    "spawnStyle": "normal",
-                    "destroyStyle": "chainBlast",
-                    "elements": [ "11", "12", "10", "14" ],
-                    "correct": [ "13" ]
-                },
-                {
                     "display": "√256",
                     "spawnStyle": "normal",
                     "destroyStyle": "chainBlast",
@@ -139,18 +132,25 @@
                     "correct": [ "16" ]
                 },
                 {
-                    "display": "√225",
+                    "display": "√289",
                     "spawnStyle": "normal",
                     "destroyStyle": "chainBlast",
-                    "elements": [ "12", "14", "16", "17.5" ],
-                    "correct": [ "15" ]
+                    "elements": [ "16", "17", "18", "15" ],
+                    "correct": [ "17" ]
                 },
                 {
-                    "display": "√-4",
+                    "display": "√324",
                     "spawnStyle": "normal",
                     "destroyStyle": "chainBlast",
-                    "elements": [ "2", "-i", "3i", "-√2i" ],
-                    "correct": [ "2i" ]
+                    "elements": [ "18", "17", "19", "20" ],
+                    "correct": [ "18" ]
+                },
+                {
+                    "display": "√361",
+                    "spawnStyle": "normal",
+                    "destroyStyle": "chainBlast",
+                    "elements": [ "18", "20", "19", "21" ],
+                    "correct": [ "19" ]
                 }
             ]
         },
@@ -160,74 +160,74 @@
             "randomWaves": false,
             "waves": [
                 {
-                    "display": "√289",
-                    "spawnStyle": "zig-zac",
-                    "destroyStyle": "normal",
-                    "elements": [ "16", "17", "18" ],
-                    "correct": [ "17" ]
-                },
-                {
-                    "display": "√361",
-                    "spawnStyle": "zig-zac",
-                    "destroyStyle": "normal",
-                    "elements": [ "18", "19", "17" ],
-                    "correct": [ "19" ]
-                },
-                {
                     "display": "√400",
                     "spawnStyle": "zig-zac",
-                    "destroyStyle": "normal",
+                    "destroyStyle": "chainBlast",
                     "elements": [ "19", "20.5", "19.5" ],
                     "correct": [ "20" ]
                 },
                 {
+                    "display": "√441",
+                    "spawnStyle": "zig-zac",
+                    "destroyStyle": "chainBlast",
+                    "elements": [ "20", "21", "22" ],
+                    "correct": [ "21" ]
+                },
+                {
                     "display": "√484",
                     "spawnStyle": "zig-zac",
-                    "destroyStyle": "normal",
+                    "destroyStyle": "chainBlast",
                     "elements": [ "21", "23", "22.5" ],
                     "correct": [ "22" ]
                 },
                 {
+                    "display": "√529",
+                    "spawnStyle": "zig-zac",
+                    "destroyStyle": "chainBlast",
+                    "elements": [ "22", "23", "25" ],
+                    "correct": [ "23" ]
+                },
+                {
                     "display": "√576",
                     "spawnStyle": "zig-zac",
-                    "destroyStyle": "normal",
+                    "destroyStyle": "chainBlast",
                     "elements": [ "22", "23", "25.5" ],
                     "correct": [ "24" ]
                 },
                 {
                     "display": "√625",
                     "spawnStyle": "zig-zac",
-                    "destroyStyle": "normal",
+                    "destroyStyle": "chainBlast",
                     "elements": [ "26", "24", "23" ],
                     "correct": [ "25" ]
                 },
                 {
-                    "display": "√-9",
+                    "display": "√676",
                     "spawnStyle": "zig-zac",
-                    "destroyStyle": "normal",
-                    "elements": [ "2i", "-i", "3i" ],
-                    "correct": [ "3i" ]
+                    "destroyStyle": "chainBlast",
+                    "elements": [ "26", "27", "25" ],
+                    "correct": [ "26" ]
                 },
                 {
-                    "display": "√-16",
+                    "display": "√729",
                     "spawnStyle": "zig-zac",
-                    "destroyStyle": "normal",
-                    "elements": [ "5i", "-4i", "-2i" ],
-                    "correct": [ "4i" ]
+                    "destroyStyle": "chainBlast",
+                    "elements": [ "27", "28", "26" ],
+                    "correct": [ "27" ]
                 },
                 {
-                    "display": "√-25",
+                    "display": "√784",
                     "spawnStyle": "zig-zac",
-                    "destroyStyle": "normal",
-                    "elements": [ "4i", "-3i", "-6i" ],
-                    "correct": [ "5i" ]
+                    "destroyStyle": "chainBlast",
+                    "elements": [ "27", "28", "29" ],
+                    "correct": [ "28" ]
                 },
                 {
-                    "display": "√-36",
+                    "display": "√841",
                     "spawnStyle": "zig-zac",
-                    "destroyStyle": "normal",
-                    "elements": [ "7i", "8i", "-5i" ],
-                    "correct": [ "6i" ]
+                    "destroyStyle": "chainBlast",
+                    "elements": [ "28", "29", "30" ],
+                    "correct": [ "29" ]
                 }
             ]
         }
