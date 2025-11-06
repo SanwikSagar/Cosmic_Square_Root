@@ -22,7 +22,6 @@
           height: 100%;
       }
 
-      /* Main container organizes the entire page layout */
       #page-container {
           width: 100vw;
           height: 100vh;
@@ -41,7 +40,7 @@
           border-bottom: 2px solid rgba(102, 126, 234, 0.5);
           backdrop-filter: blur(10px);
           z-index: 10;
-          flex-shrink: 0; /* Prevents the bar from shrinking */
+          flex-shrink: 0;
       }
       
       .title-section { display: flex; align-items: center; gap: 15px; }
@@ -129,8 +128,7 @@
       </div>
 
       <div id="unity-container">
-        <!-- Canvas size will be controlled by the script -->
-        <canvas id="unity-canvas" width=1920 height=1080 tabindex="-1"></canvas>
+        <canvas id="unity-canvas" tabindex="-1"></canvas>
       </div>
     </div>
 
@@ -139,7 +137,6 @@
     </div>
     
     <script>
-      // --- ELEMENT SELECTORS ---
       var pageContainer = document.querySelector("#page-container");
       var unityContainer = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
@@ -160,30 +157,18 @@
           location.reload();
       }
 
-      // --- DEVICE DETECTION FUNCTION ---
-      function isMobileDevice() {
-        return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-      }
-
-      // --- SCALING AND LETTERBOXING LOGIC ---
+      // --- [FINAL UNIVERSAL DYNAMIC] SCALING LOGIC ---
       function applyLetterboxing() {
-          let targetAspectRatio;
+          // Use the reliable CSS media query to check orientation.
+          const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+          const targetAspectRatio = isPortrait ? (9 / 16) : (16 / 9);
 
-          // Check if the device is mobile and set aspect ratio accordingly
-          if (isMobileDevice()) {
-            // Portrait aspect ratio for mobile
-            targetAspectRatio = 9 / 16; 
-          } else {
-            // Landscape aspect ratio for desktop
-            targetAspectRatio = 16 / 9;
-          }
-          
           let containerWidth = unityContainer.offsetWidth;
           let containerHeight = unityContainer.offsetHeight;
           let containerAspectRatio = containerWidth / containerHeight;
           
           let newWidth, newHeight;
-
+          
           if (containerAspectRatio > targetAspectRatio) {
               newHeight = containerHeight;
               newWidth = newHeight * targetAspectRatio;
@@ -191,18 +176,25 @@
               newWidth = containerWidth;
               newHeight = newWidth / targetAspectRatio;
           }
+
+          // Round the final CSS size to prevent resize feedback loops.
+          const finalWidth = Math.round(newWidth);
+          const finalHeight = Math.round(newHeight);
           
-          canvas.style.width = newWidth + 'px';
-          canvas.style.height = newHeight + 'px';
+          canvas.style.width = finalWidth + 'px';
+          canvas.style.height = finalHeight + 'px';
+
+          // Apply a DYNAMIC internal resolution for ALL devices.
+          // This ensures sharpness and correct scaling on any screen.
+          const dpr = window.devicePixelRatio || 1;
+          canvas.width = Math.round(finalWidth * dpr);
+          canvas.height = Math.round(finalHeight * dpr);
       }
 
-      // Add listeners to re-apply letterboxing on resize or orientation change
       window.addEventListener('resize', applyLetterboxing);
       window.addEventListener('orientationchange', applyLetterboxing);
 
-      // --- UNITY BANNER FUNCTION (FROM YOUR BASE FILE) ---
       function unityShowBanner(msg, type) {
-        // This is a minimal implementation. You can customize it further if needed.
         var div = document.createElement('div');
         div.innerHTML = msg;
         div.style.position = 'absolute';
@@ -226,16 +218,13 @@
         }
       }
 
-      // --- UNITY INSTANCE CONFIGURATION ---
       var buildUrl = "Build";
-      // === IMPORTANT: UPDATED FOR "Asteroid_destroyer" BUILD ===
       var loaderUrl = buildUrl + "/Asteroid_destroyer.loader.js";
       var config = {
         arguments: [],
         dataUrl: buildUrl + "/Asteroid_destroyer.data",
         frameworkUrl: buildUrl + "/Asteroid_destroyer.framework.js",
         codeUrl: buildUrl + "/Asteroid_destroyer.wasm",
-        // === END OF CHANGES ===
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "AstroidDestroyer",
@@ -260,7 +249,6 @@
         });
       };
       
-      // Listener to update the fullscreen button icon/text
       document.addEventListener('fullscreenchange', () => {
           const fullscreenButton = document.getElementById('fullscreen-button');
           if (document.fullscreenElement) {
@@ -268,11 +256,9 @@
           } else {
               fullscreenButton.innerHTML = '<span class="icon">⛶</span><span>Fullscreen</span>';
           }
-          // A short delay helps the browser adjust before recalculating the canvas size
-          setTimeout(applyLetterboxing, 100); 
+          setTimeout(applyLetterboxing, 150); 
       });
 
-      // Initial setup calls before loading starts
       applyLetterboxing(); 
       document.body.appendChild(script);
     </script>
