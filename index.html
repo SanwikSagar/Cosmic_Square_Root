@@ -59,25 +59,26 @@
       
       .game-title {
           color: white; font-family: 'Bebas Neue', cursive;
-          font-size: clamp(20px, 3.5vw, 32px);
+          font-size: clamp(18px, 3vw, 32px);
           letter-spacing: clamp(1px, 0.2vw, 3px);
           text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
       }
       
-      .btn-group { display: flex; gap: clamp(8px, 2vw, 18px); align-items: center; }
+      .btn-group { display: flex; gap: clamp(6px, 1.5vw, 15px); align-items: center; flex-wrap: nowrap; }
       
       button {
           background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
           color: white; border: none;
-          padding: clamp(6px, 1.2vh, 12px) clamp(12px, 2.5vw, 24px);
-          border-radius: clamp(18px, 3vw, 28px);
+          padding: clamp(5px, 1vh, 10px) clamp(8px, 2vw, 18px);
+          border-radius: clamp(15px, 2.5vw, 25px);
           cursor: pointer;
-          font-size: clamp(11px, 1.8vw, 15px);
+          font-size: clamp(10px, 1.5vw, 14px);
           font-weight: 600; text-transform: uppercase;
-          letter-spacing: clamp(0.5px, 0.1vw, 1.5px);
+          letter-spacing: clamp(0.3px, 0.08vw, 1px);
           transition: all 0.3s ease;
           box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
           display: flex; align-items: center;
+          white-space: nowrap;
       }
       
       button:hover {
@@ -92,7 +93,7 @@
       }
       
       .btn-secondary:hover { background: rgba(255, 255, 255, 0.2); }
-      .icon { font-size: clamp(12px, 2vw, 18px); margin-right: clamp(4px, 1vw, 10px); }
+      .icon { font-size: clamp(10px, 1.5vw, 16px); margin-right: clamp(3px, 0.8vw, 8px); }
 
       #unity-container {
         flex: 1;
